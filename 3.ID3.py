@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 
-dataset=pd.read_csv('playtennis.csv')
+dataset=pd.read_csv('PlayTennis.csv')
 tdata=dataset.sample(frac=0.8)
 print("The Training Dataset:\n")
 print(dataset)
@@ -36,8 +36,8 @@ def entropy(target_col):
     entropy=np.sum([(-counts[i]/np.sum(counts))*np.log2(counts[i]/np.sum(counts)) for i in range(len(elements))])
     return entropy
 
-f=['outlook','temperature','humidity','wind']
-tname="playtennis"
+f=['Outlook','Temperature','Humidity','Wind']
+tname="PlayTennis"
 pnode=None
 tree=ID3(dataset,f,tname,pnode)
 print("\nTree:\n")
